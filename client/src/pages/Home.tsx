@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -10,12 +10,12 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import {
-  Code2,
+  Globe,
   Zap,
   Brain,
-  TrendingDown,
+  Layers,
   Shield,
-  Cpu,
+  TrendingUp,
   Mail,
   Phone,
   Linkedin,
@@ -73,18 +73,18 @@ export default function Home() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b border-border z-50">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="text-xl font-bold text-primary">Prince Anyanwu</div>
+          <div className="text-xl font-bold text-accent">Michael Eko</div>
           <div className="hidden md:flex gap-8 text-sm">
-            <a href="#featured" className="hover:text-primary transition">
-              Featured Work
+            <a href="#featured" className="hover:text-accent transition">
+              Work
             </a>
-            <a href="#expertise" className="hover:text-primary transition">
+            <a href="#expertise" className="hover:text-accent transition">
               Expertise
             </a>
-            <a href="#blog" className="hover:text-primary transition">
-              Blog
+            <a href="#about" className="hover:text-accent transition">
+              About
             </a>
-            <a href="#contact" className="hover:text-primary transition">
+            <a href="#contact" className="hover:text-accent transition">
               Contact
             </a>
           </div>
@@ -92,20 +92,44 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4">
+      <section className="pt-32 pb-20 px-4 relative overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 -z-10 opacity-20"
+          style={{
+            backgroundImage: "url('/hero-bg-michael.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            AI Infrastructure & Cost Optimization Engineer
+            Immigration Systems × AI Growth Operator
           </h1>
-
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl">
-            I design and deploy AI systems that reduce cost, automate workflows, and give real-time visibility into AI spend.
+            I design and scale systems that help people move across borders while leveraging AI to automate growth, engagement, and decision-making.
           </p>
+
+          {/* Authority Badges */}
+          <div className="flex flex-wrap gap-3 mb-8">
+            <div className="px-3 py-1 bg-accent/10 border border-accent/30 rounded text-sm text-accent font-medium">
+              Canadian Immigration
+            </div>
+            <div className="px-3 py-1 bg-accent/10 border border-accent/30 rounded text-sm text-accent font-medium">
+              RCIC Candidate
+            </div>
+            <div className="px-3 py-1 bg-accent/10 border border-accent/30 rounded text-sm text-accent font-medium">
+              Japa Genie Co-founder
+            </div>
+            <div className="px-3 py-1 bg-accent/10 border border-accent/30 rounded text-sm text-accent font-medium">
+              AI Systems & Automation
+            </div>
+          </div>
 
           <div className="flex flex-col md:flex-row gap-4">
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground"
               onClick={() =>
                 document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
               }
@@ -125,107 +149,34 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Projects */}
-      <section id="featured" className="py-20 px-4 bg-card/50">
+      {/* What I Do Section */}
+      <section className="py-20 px-4 bg-card/50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12">Featured Projects</h2>
+          <h2 className="text-4xl font-bold mb-12">What I Do</h2>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "Burn Rate",
+                icon: <Globe className="w-8 h-8" />,
+                title: "Immigration Operations",
                 description:
-                  "Real-time AI API cost monitoring platform with intelligent alerts and leak detection",
-                link: "https://burn-rate-zeta.vercel.app/",
-                github: "https://github.com/anyanwuihueze/burn-rate",
-              },
-              {
-                title: "Japa Genie",
-                description:
-                  "AI-powered relocation assistant helping Nigerians navigate international moves",
-                link: "https://www.japagenie.com",
-                github: "https://github.com/anyanwuihueze/japa-genie-test-v1-preauth",
-              },
-              {
-                title: "Eden Access",
-                description:
-                  "AI concierge system with voice and identity verification for automating access and guest management in properties",
-                link: "https://eden-access.vercel.app/",
-                github: "#",
-              },
-            ].map((project, idx) => (
-              <Card key={idx} className="p-6 hover:border-primary/50 transition">
-                <h3 className="text-xl font-bold mb-3">{project.title}</h3>
-                <p className="text-muted-foreground mb-6">{project.description}</p>
-                <div className="flex gap-3">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => window.open(project.link, "_blank")}
-                  >
-                    View Demo
-                    <ExternalLink className="ml-2 w-3 h-3" />
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => window.open(project.github, "_blank")}
-                  >
-                    GitHub
-                  </Button>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Expertise */}
-      <section id="expertise" className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12">Core Expertise</h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <TrendingDown className="w-8 h-8" />,
-                title: "AI Cost Optimization",
-                description:
-                  "Monitor, analyze, and optimize AI API spending across multiple providers",
+                  "Real-world experience supporting immigrants in Canadian correctional and transition settings. Deep understanding of immigration processes, compliance, and case handling.",
               },
               {
                 icon: <Brain className="w-8 h-8" />,
-                title: "AI Agents & Automation",
+                title: "AI Systems & Automation",
                 description:
-                  "Design and deploy intelligent agents for customer support, lead qualification, and workflow automation",
+                  "Design and deploy AI-powered automation workflows. Ubuntu-based systems, prompt engineering, pipeline optimization, and production-ready AI agents.",
               },
               {
-                icon: <Zap className="w-8 h-8" />,
-                title: "Real-Time Systems",
+                icon: <TrendingUp className="w-8 h-8" />,
+                title: "Growth & Scaling",
                 description:
-                  "Build scalable infrastructure for real-time monitoring, alerts, and data processing",
-              },
-              {
-                icon: <Shield className="w-8 h-8" />,
-                title: "Security & Compliance",
-                description:
-                  "Implement secure key management, data protection, and compliance frameworks",
-              },
-              {
-                icon: <Cpu className="w-8 h-8" />,
-                title: "Infrastructure Design",
-                description:
-                  "Architect cloud-native systems optimized for performance and cost efficiency",
-              },
-              {
-                icon: <Code2 className="w-8 h-8" />,
-                title: "Full-Stack Development",
-                description:
-                  "End-to-end implementation from backend APIs to production-ready frontends",
+                  "Build AI-powered content systems and automated marketing pipelines. User engagement optimization and scalable solutions that reach thousands.",
               },
             ].map((item, idx) => (
               <div key={idx} className="space-y-3">
-                <div className="text-primary">{item.icon}</div>
+                <div className="text-accent">{item.icon}</div>
                 <h3 className="font-bold text-lg">{item.title}</h3>
                 <p className="text-muted-foreground text-sm">{item.description}</p>
               </div>
@@ -234,32 +185,54 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Blog Section */}
-      <section id="blog" className="py-20 px-4 bg-card/50">
+      {/* Featured Projects */}
+      <section id="featured" className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12">Automation Playbooks</h2>
+          <h2 className="text-4xl font-bold mb-12">Featured Projects</h2>
 
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                title: "The Hidden Cost Crisis: Why AI Companies Are Bleeding Money",
-                excerpt:
-                  "Most AI teams have zero visibility into API spending. Learn why surprise bills are costing startups thousands monthly and how to prevent it.",
-                date: "Mar 28, 2026",
+                title: "Japa Genie",
+                description:
+                  "AI-powered immigration assistant helping Africans navigate global relocation. Growth strategy, AI content systems, and user engagement optimization.",
+                role: "Co-founder & Growth Partner",
+                link: "https://www.japagenie.com",
+                github: "https://github.com/anyanwuihueze/japa-genie-test-v1-preauth",
               },
               {
-                title: "How to Automate Your Sales Pipeline with AI",
-                excerpt:
-                  "Complete guide to implementing AI agents for lead qualification while maintaining personalization and trust.",
-                date: "Mar 25, 2026",
+                title: "AI Video Automation Engine",
+                description:
+                  "End-to-end system: Script → Generate → Publish. Scalable marketing campaigns with automated video generation and distribution pipelines.",
+                role: "System Architect",
+                link: "#",
+                github: "#",
               },
-            ].map((post, idx) => (
-              <Card key={idx} className="p-6 hover:border-primary/50 transition cursor-pointer">
-                <h3 className="text-lg font-bold mb-3 line-clamp-2">{post.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4 line-clamp-3">{post.excerpt}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-muted-foreground">{post.date}</span>
-                  <span className="text-primary text-sm font-semibold">Read →</span>
+            ].map((project, idx) => (
+              <Card key={idx} className="p-8 hover:border-accent/50 transition">
+                <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+                <p className="text-accent text-sm font-semibold mb-4">{project.role}</p>
+                <p className="text-muted-foreground mb-6">{project.description}</p>
+                <div className="flex gap-3">
+                  {project.link !== "#" && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => window.open(project.link, "_blank")}
+                    >
+                      View Demo
+                      <ExternalLink className="ml-2 w-3 h-3" />
+                    </Button>
+                  )}
+                  {project.github !== "#" && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => window.open(project.github, "_blank")}
+                    >
+                      GitHub
+                    </Button>
+                  )}
                 </div>
               </Card>
             ))}
@@ -267,12 +240,95 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Why I'm Different */}
+      <section className="py-20 px-4 bg-card/50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-12">Why I'm Different</h2>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                icon: <Shield className="w-6 h-6" />,
+                title: "Real-World Immigration Experience",
+                description:
+                  "Not just theory. Direct experience in Canadian immigration systems, compliance frameworks, and real-world case handling.",
+              },
+              {
+                icon: <Layers className="w-6 h-6" />,
+                title: "Build AI Systems That Scale",
+                description:
+                  "Ability to architect and deploy AI solutions that scale from MVP to production, serving thousands of users.",
+              },
+              {
+                icon: <Zap className="w-6 h-6" />,
+                title: "Compliance + Automation + Growth",
+                description:
+                  "Rare combination: understands regulatory requirements, builds scalable systems, and drives user acquisition.",
+              },
+              {
+                icon: <Globe className="w-6 h-6" />,
+                title: "Operator Mindset",
+                description:
+                  "Think strategically and execute tactically. Operate both technically and commercially to solve real human problems.",
+              },
+            ].map((item, idx) => (
+              <div key={idx} className="flex gap-4">
+                <div className="text-accent flex-shrink-0">{item.icon}</div>
+                <div>
+                  <h3 className="font-bold text-lg mb-2">{item.title}</h3>
+                  <p className="text-muted-foreground text-sm">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-20 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold mb-8">About</h2>
+
+          <div className="space-y-6 text-muted-foreground leading-relaxed">
+            <p>
+              I operate at the intersection of immigration, technology, and growth. With hands-on experience supporting immigrants in Canadian correctional and transition environments, I've developed a deep, real-world understanding of immigration systems and challenges.
+            </p>
+            <p>
+              Alongside this, I build and deploy AI-powered systems—from automation pipelines to content engines—enabling scalable solutions that reach and impact thousands. My work focuses on combining compliance, human insight, and intelligent automation to solve real problems.
+            </p>
+            <p>
+              As Co-founder and Growth Partner at Japa Genie, I'm applying these principles to help African professionals navigate global relocation while leveraging AI to automate growth and decision-making.
+            </p>
+          </div>
+
+          {/* Credentials */}
+          <div className="mt-12 pt-12 border-t border-border">
+            <h3 className="text-2xl font-bold mb-6">Credentials & Expertise</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                "RCIC Candidate (Regulated Canadian Immigration Consultant)",
+                "Canadian Immigration Experience",
+                "AI Systems & Automation",
+                "Co-founder @ Japa Genie",
+                "Growth & Marketing Strategy",
+                "AI Video Generation & Automation",
+              ].map((cred, idx) => (
+                <div key={idx} className="flex items-start gap-3">
+                  <div className="text-accent mt-1">✓</div>
+                  <p className="text-foreground">{cred}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4">
+      <section id="contact" className="py-20 px-4 bg-card/50">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-4xl font-bold mb-4 text-center">Let's Work Together</h2>
+          <h2 className="text-4xl font-bold mb-4 text-center">Let's Connect</h2>
           <p className="text-center text-muted-foreground mb-12">
-            Tell me what you're building or struggling with—I'll help you design and deploy the right system.
+            Building at the intersection of immigration, AI, and global mobility. If you're working on something meaningful in this space — let's connect.
           </p>
 
           <form onSubmit={handleFormSubmit} className="space-y-6 mb-12">
@@ -312,15 +368,16 @@ export default function Home() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-semibold mb-2">Service Type</label>
+                <label className="block text-sm font-semibold mb-2">Interest</label>
                 <Select value={formData.serviceType} onValueChange={(value) => handleSelectChange("serviceType", value)}>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select a service" />
+                    <SelectValue placeholder="Select an interest" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="cost-optimization">AI Cost Optimization</SelectItem>
-                    <SelectItem value="automation">Automation & AI Agents</SelectItem>
-                    <SelectItem value="infrastructure">Infrastructure Design</SelectItem>
+                    <SelectItem value="immigration-systems">Immigration Systems</SelectItem>
+                    <SelectItem value="ai-automation">AI & Automation</SelectItem>
+                    <SelectItem value="growth-strategy">Growth Strategy</SelectItem>
+                    <SelectItem value="collaboration">Collaboration</SelectItem>
                     <SelectItem value="other">Other</SelectItem>
                   </SelectContent>
                 </Select>
@@ -333,7 +390,7 @@ export default function Home() {
                 name="message"
                 value={formData.message}
                 onChange={handleFormChange}
-                placeholder="Tell me about your project..."
+                placeholder="Tell me about your project or idea..."
                 rows={5}
                 required
               />
@@ -342,7 +399,7 @@ export default function Home() {
             <Button
               type="submit"
               size="lg"
-              className="w-full"
+              className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
               disabled={isSubmitting}
             >
               {isSubmitting ? "Sending..." : "Send Message"}
@@ -353,32 +410,27 @@ export default function Home() {
           <div className="border-t border-border pt-12">
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <div>
-                <Mail className="w-6 h-6 text-primary mx-auto mb-3" />
+                <Mail className="w-6 h-6 text-accent mx-auto mb-3" />
                 <p className="text-sm text-muted-foreground mb-2">Email</p>
-                <a href="mailto:anyanwuihueze@gmail.com" className="font-semibold hover:text-primary">
-                  anyanwuihueze@gmail.com
+                <a href="mailto:placeholder@email.com" className="font-semibold hover:text-accent">
+                  placeholder@email.com
                 </a>
               </div>
               <div>
-                <Phone className="w-6 h-6 text-primary mx-auto mb-3" />
+                <Phone className="w-6 h-6 text-accent mx-auto mb-3" />
                 <p className="text-sm text-muted-foreground mb-2">Phone</p>
-                <div className="space-y-1">
-                  <a href="tel:+2347088564317" className="font-semibold hover:text-primary block text-sm">
-                    +234 708 856 4317
-                  </a>
-                  <a href="tel:+2349031622709" className="font-semibold hover:text-primary block text-sm">
-                    +234 903 162 2709
-                  </a>
-                </div>
+                <a href="tel:+12042901895" className="font-semibold hover:text-accent">
+                  +1 (204) 290-1895
+                </a>
               </div>
               <div>
-                <Linkedin className="w-6 h-6 text-primary mx-auto mb-3" />
+                <Linkedin className="w-6 h-6 text-accent mx-auto mb-3" />
                 <p className="text-sm text-muted-foreground mb-2">Social</p>
                 <div className="flex gap-4 justify-center">
-                  <a href="#" className="hover:text-primary transition">
+                  <a href="#" className="hover:text-accent transition" title="LinkedIn">
                     <Linkedin className="w-5 h-5" />
                   </a>
-                  <a href="#" className="hover:text-primary transition">
+                  <a href="#" className="hover:text-accent transition" title="GitHub">
                     <Github className="w-5 h-5" />
                   </a>
                 </div>
@@ -391,8 +443,8 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-border py-12 px-4 bg-card/50">
         <div className="max-w-6xl mx-auto text-center text-muted-foreground">
-          <p>© 2026 Prince Anyanwu. All rights reserved.</p>
-          <p className="text-sm mt-2">AI Infrastructure & Cost Optimization Engineer</p>
+          <p>© 2026 Michael Eko. All rights reserved.</p>
+          <p className="text-sm mt-2">Immigration Systems & AI Growth Operator</p>
         </div>
       </footer>
     </div>
