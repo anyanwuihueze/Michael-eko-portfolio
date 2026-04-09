@@ -18,7 +18,6 @@ import {
   Mail,
   Phone,
   Linkedin,
-  Github,
   ExternalLink,
   ArrowRight,
 } from "lucide-react";
@@ -91,7 +90,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Navigation */}
       <motion.nav
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -148,32 +146,40 @@ export default function Home() {
         </div>
       </motion.nav>
 
-      {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="pt-40 pb-32 px-4 md:px-8"
+        className="pt-40 pb-24 px-4 md:px-8"
       >
         <div className="max-w-5xl mx-auto">
           <motion.div variants={containerVariants} initial="hidden" animate="visible">
+            <motion.p
+              variants={itemVariants}
+              className="text-sm md:text-base uppercase tracking-[0.2em] text-accent font-semibold mb-6"
+            >
+              AI Growth Operator | Immigration Systems Specialist | Co-founder @ Japa Genie
+            </motion.p>
+
             <motion.h1
               variants={itemVariants}
-              className="text-6xl md:text-7xl font-bold mb-8 leading-tight tracking-tight"
+              className="text-5xl md:text-7xl font-bold mb-8 leading-tight tracking-tight"
             >
-              Immigration Systems
+              AI-powered systems for
               <br />
-              <span className="text-accent">× AI Growth Operator</span>
+              <span className="text-accent">global migration and growth</span>
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
-              className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl leading-relaxed"
+              className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl leading-relaxed"
             >
-              I design and scale systems that help people move across borders while leveraging AI to automate growth, engagement, and decision-making.
+              I design and scale AI-powered systems that help people navigate global
+              migration—while automating growth, engagement, and decision-making for
+              digital products.
             </motion.p>
 
-            <motion.div variants={itemVariants} className="flex flex-col md:flex-row gap-6 mb-16">
+            <motion.div variants={itemVariants} className="flex flex-col md:flex-row gap-6 mb-14">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -197,12 +203,11 @@ export default function Home() {
               </motion.button>
             </motion.div>
 
-            {/* Authority Badges */}
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-3">
+            <motion.div variants={itemVariants} className="flex flex-wrap gap-3 mb-10">
               {[
-                "Canadian Immigration",
-                "RCIC Candidate",
-                "Japa Genie Co-founder",
+                "Canadian Immigration Experience",
+                "Education & Process Guidance",
+                "Co-founder @ Japa Genie",
                 "AI Systems & Automation",
               ].map((badge, idx) => (
                 <motion.div
@@ -214,26 +219,37 @@ export default function Home() {
                 </motion.div>
               ))}
             </motion.div>
+
+            <motion.div
+              variants={itemVariants}
+              className="max-w-4xl border border-accent/30 bg-accent/5 rounded-lg p-6 md:p-7"
+            >
+              <p className="text-sm md:text-base leading-relaxed text-foreground">
+                <span className="font-bold text-accent">Important compliance note:</span>{" "}
+                I am not a Regulated Canadian Immigration Consultant (RCIC) and do not
+                provide immigration advice or representation. My work focuses on
+                education, systems design, and process guidance based on publicly
+                available policies.
+              </p>
+            </motion.div>
           </motion.div>
         </div>
       </motion.section>
 
-      {/* Divider */}
       <motion.div
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
         transition={{ duration: 0.8 }}
-        className="h-px bg-border max-w-5xl mx-auto mb-32"
+        className="h-px bg-border max-w-5xl mx-auto mb-24"
       />
 
-      {/* What I Do Section */}
-      <motion.section className="py-32 px-4 md:px-8">
+      <motion.section className="py-24 px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-5xl md:text-6xl font-bold mb-20"
+            className="text-4xl md:text-6xl font-bold mb-16"
           >
             What I Do
           </motion.h2>
@@ -243,26 +259,26 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid md:grid-cols-3 gap-16"
+            className="grid md:grid-cols-3 gap-12 md:gap-16"
           >
             {[
               {
                 icon: <Globe className="w-10 h-10" />,
-                title: "Immigration Operations",
+                title: "Immigration Systems & Operations",
                 description:
-                  "Real-world experience supporting immigrants in Canadian correctional and transition settings. Deep understanding of immigration processes, compliance, and case handling.",
+                  "Experience supporting individuals navigating Canadian immigration systems within correctional and transition environments. Strong understanding of immigration processes, policy frameworks, documentation systems, and case navigation in a non-advisory support capacity.",
               },
               {
                 icon: <Brain className="w-10 h-10" />,
                 title: "AI Systems & Automation",
                 description:
-                  "Design and deploy AI-powered automation workflows. Ubuntu-based systems, prompt engineering, pipeline optimization, and production-ready AI agents.",
+                  "I design and deploy AI-powered workflows that automate complex processes: prompt engineering and LLM systems, automation pipelines for content and agents, Ubuntu-based environments, system deployment, and scalable AI tools from MVP to production.",
               },
               {
                 icon: <TrendingUp className="w-10 h-10" />,
                 title: "Growth & Scaling",
                 description:
-                  "Build AI-powered content systems and automated marketing pipelines. User engagement optimization and scalable solutions that reach thousands.",
+                  "I build systems that don’t just work—they grow. That includes AI-powered content engines, automated marketing pipelines, user engagement systems, and growth loops for digital products.",
               },
             ].map((item, idx) => (
               <motion.div
@@ -282,14 +298,13 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Featured Projects */}
-      <motion.section id="featured" className="py-32 px-4 md:px-8 bg-secondary/30">
+      <motion.section id="featured" className="py-24 px-4 md:px-8 bg-secondary/30">
         <div className="max-w-6xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-5xl md:text-6xl font-bold mb-20"
+            className="text-4xl md:text-6xl font-bold mb-16"
           >
             Featured Projects
           </motion.h2>
@@ -299,24 +314,22 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid md:grid-cols-2 gap-12"
+            className="grid md:grid-cols-2 gap-10 md:gap-12"
           >
             {[
               {
                 title: "Japa Genie",
                 description:
-                  "AI-powered immigration assistant helping Africans navigate global relocation. Growth strategy, AI content systems, and user engagement optimization.",
+                  "AI-powered platform helping African users understand and navigate global relocation pathways. My role spans growth strategy and user acquisition, AI content systems, product positioning, and engagement optimization.",
                 role: "Co-founder & Growth Partner",
                 link: "https://www.japagenie.com",
-                github: "https://github.com/anyanwuihueze/japa-genie-test-v1-preauth",
               },
               {
                 title: "AI Video Automation Engine",
                 description:
-                  "End-to-end system: Script → Generate → Publish. Scalable marketing campaigns with automated video generation and distribution pipelines.",
+                  "Built a fully automated pipeline: Script → Generate → Publish. Designed for scalable content production, automated distribution systems, and growth-focused campaign execution.",
                 role: "System Architect",
                 link: "#",
-                github: "#",
               },
             ].map((project, idx) => (
               <motion.div
@@ -330,45 +343,32 @@ export default function Home() {
                 <p className="text-muted-foreground mb-8 leading-relaxed text-lg">
                   {project.description}
                 </p>
-                <div className="flex gap-4">
-                  {project.link !== "#" && (
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      onClick={() => window.open(project.link, "_blank")}
-                      className="px-6 py-2 border border-foreground text-foreground font-bold rounded-sm transition-all hover:bg-foreground/5 flex items-center gap-2"
-                    >
-                      View Demo
-                      <ExternalLink className="w-4 h-4" />
-                    </motion.button>
-                  )}
-                  {project.github !== "#" && (
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      onClick={() => window.open(project.github, "_blank")}
-                      className="px-6 py-2 border border-foreground text-foreground font-bold rounded-sm transition-all hover:bg-foreground/5"
-                    >
-                      GitHub
-                    </motion.button>
-                  )}
-                </div>
+                {project.link !== "#" && (
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => window.open(project.link, "_blank")}
+                    className="px-6 py-2 border border-foreground text-foreground font-bold rounded-sm transition-all hover:bg-foreground/5 flex items-center gap-2"
+                  >
+                    View Project
+                    <ExternalLink className="w-4 h-4" />
+                  </motion.button>
+                )}
               </motion.div>
             ))}
           </motion.div>
         </div>
       </motion.section>
 
-      {/* Why I'm Different */}
-      <motion.section id="expertise" className="py-32 px-4 md:px-8">
+      <motion.section id="expertise" className="py-24 px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-5xl md:text-6xl font-bold mb-20"
+            className="text-4xl md:text-6xl font-bold mb-16"
           >
-            Why I'm Different
+            Why I’m Different
           </motion.h2>
 
           <motion.div
@@ -381,27 +381,27 @@ export default function Home() {
             {[
               {
                 icon: <Shield className="w-8 h-8" />,
-                title: "Real-World Immigration Experience",
+                title: "Real-World Immigration Exposure",
                 description:
-                  "Not just theory. Direct experience in Canadian immigration systems, compliance frameworks, and real-world case handling.",
+                  "Hands-on experience working within systems that interact with immigration realities—not just theory.",
               },
               {
                 icon: <Layers className="w-8 h-8" />,
-                title: "Build AI Systems That Scale",
+                title: "Builder + Operator",
                 description:
-                  "Ability to architect and deploy AI solutions that scale from MVP to production, serving thousands of users.",
+                  "I don’t just design ideas—I build and deploy working systems.",
               },
               {
                 icon: <Zap className="w-8 h-8" />,
-                title: "Compliance + Automation + Growth",
+                title: "Compliance-Aware",
                 description:
-                  "Rare combination: understands regulatory requirements, builds scalable systems, and drives user acquisition.",
+                  "I understand the boundaries of immigration regulation and build systems that stay within safe, non-advisory frameworks.",
               },
               {
                 icon: <Globe className="w-8 h-8" />,
-                title: "Operator Mindset",
+                title: "AI + Growth + Systems Thinking",
                 description:
-                  "Think strategically and execute tactically. Operate both technically and commercially to solve real human problems.",
+                  "Rare combination of technical AI execution, growth strategy, and operational thinking.",
               },
             ].map((item, idx) => (
               <motion.div
@@ -423,16 +423,15 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* About Section */}
-      <motion.section id="about" className="py-32 px-4 md:px-8 bg-secondary/30">
+      <motion.section id="about" className="py-24 px-4 md:px-8 bg-secondary/30">
         <div className="max-w-4xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-5xl md:text-6xl font-bold mb-12"
+            className="text-4xl md:text-6xl font-bold mb-12"
           >
-            About
+            About Me
           </motion.h2>
 
           <motion.div
@@ -442,17 +441,21 @@ export default function Home() {
             className="space-y-8 text-muted-foreground leading-relaxed text-lg"
           >
             <p>
-              I operate at the intersection of immigration, technology, and growth. With hands-on experience supporting immigrants in Canadian correctional and transition environments, I've developed a deep, real-world understanding of immigration systems and challenges.
+              I work at the intersection of immigration, AI, and growth.
             </p>
             <p>
-              Alongside this, I build and deploy AI-powered systems—from automation pipelines to content engines—enabling scalable solutions that reach and impact thousands. My work focuses on combining compliance, human insight, and intelligent automation to solve real problems.
+              My experience supporting individuals in structured environments has
+              given me a practical understanding of how immigration systems affect
+              real lives. I combine that with technical expertise in AI to build
+              scalable tools that simplify complex processes.
             </p>
             <p>
-              As Co-founder and Growth Partner at Japa Genie, I'm applying these principles to help African professionals navigate global relocation while leveraging AI to automate growth and decision-making.
+              As Co-founder of Japa Genie, I’m focused on helping African
+              professionals access global opportunities through technology-driven
+              guidance and automation.
             </p>
           </motion.div>
 
-          {/* Credentials */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -462,12 +465,12 @@ export default function Home() {
             <h3 className="text-3xl font-bold mb-10">Credentials & Expertise</h3>
             <div className="grid md:grid-cols-2 gap-6">
               {[
-                "RCIC Candidate (Regulated Canadian Immigration Consultant)",
-                "Canadian Immigration Experience",
-                "AI Systems & Automation",
+                "Education & process guidance based on public immigration policies",
+                "Canadian immigration experience",
+                "AI systems & automation",
                 "Co-founder @ Japa Genie",
-                "Growth & Marketing Strategy",
-                "AI Video Generation & Automation",
+                "Growth & marketing systems",
+                "Ubuntu environments, agents, and deployment workflows",
               ].map((cred, idx) => (
                 <motion.div
                   key={idx}
@@ -483,8 +486,7 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Contact Section */}
-      <motion.section id="contact" className="py-32 px-4 md:px-8">
+      <motion.section id="contact" className="py-24 px-4 md:px-8">
         <div className="max-w-2xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -492,9 +494,10 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">Let's Connect</h2>
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">Let’s Connect</h2>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Building at the intersection of immigration, AI, and global mobility. If you're working on something meaningful in this space — let's connect.
+              Building at the intersection of immigration, AI, and global mobility.
+              If you’re working on something meaningful in this space — let’s connect.
             </p>
           </motion.div>
 
@@ -545,12 +548,17 @@ export default function Home() {
               </div>
               <div>
                 <label className="block text-sm font-bold mb-3">Interest</label>
-                <Select value={formData.serviceType} onValueChange={(value) => handleSelectChange("serviceType", value)}>
+                <Select
+                  value={formData.serviceType}
+                  onValueChange={(value) => handleSelectChange("serviceType", value)}
+                >
                   <SelectTrigger className="border border-border rounded-sm px-4 py-3 text-lg">
                     <SelectValue placeholder="Select an interest" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="immigration-systems">Immigration Systems</SelectItem>
+                    <SelectItem value="immigration-systems">
+                      Immigration Systems
+                    </SelectItem>
                     <SelectItem value="ai-automation">AI & Automation</SelectItem>
                     <SelectItem value="growth-strategy">Growth Strategy</SelectItem>
                     <SelectItem value="collaboration">Collaboration</SelectItem>
@@ -584,7 +592,6 @@ export default function Home() {
             </motion.button>
           </motion.form>
 
-          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -595,45 +602,40 @@ export default function Home() {
               <div>
                 <Mail className="w-8 h-8 text-accent mx-auto mb-4" />
                 <p className="text-sm text-muted-foreground mb-3 font-medium">Email</p>
-                <a href="mailto:placeholder@email.com" className="font-bold text-lg hover:text-accent transition-colors">
-                  placeholder@email.com
+                <a
+                  href="mailto:ekomichael1981@gmail.com"
+                  className="font-bold text-lg hover:text-accent transition-colors break-all"
+                >
+                  ekomichael1981@gmail.com
                 </a>
               </div>
               <div>
                 <Phone className="w-8 h-8 text-accent mx-auto mb-4" />
                 <p className="text-sm text-muted-foreground mb-3 font-medium">Phone</p>
-                <a href="tel:+12042901895" className="font-bold text-lg hover:text-accent transition-colors">
+                <a
+                  href="tel:+12042901895"
+                  className="font-bold text-lg hover:text-accent transition-colors"
+                >
                   +1 (204) 290-1895
                 </a>
               </div>
               <div>
                 <Linkedin className="w-8 h-8 text-accent mx-auto mb-4" />
-                <p className="text-sm text-muted-foreground mb-3 font-medium">Social</p>
-                <div className="flex gap-6 justify-center">
-                  <motion.a
-                    whileHover={{ scale: 1.2 }}
-                    href="#"
-                    className="hover:text-accent transition-colors"
-                    title="LinkedIn"
-                  >
-                    <Linkedin className="w-6 h-6" />
-                  </motion.a>
-                  <motion.a
-                    whileHover={{ scale: 1.2 }}
-                    href="#"
-                    className="hover:text-accent transition-colors"
-                    title="GitHub"
-                  >
-                    <Github className="w-6 h-6" />
-                  </motion.a>
-                </div>
+                <p className="text-sm text-muted-foreground mb-3 font-medium">LinkedIn</p>
+                <a
+                  href="https://www.linkedin.com/in/michael-eko-816190275"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-bold text-lg hover:text-accent transition-colors break-all"
+                >
+                  View Profile
+                </a>
               </div>
             </div>
           </motion.div>
         </div>
       </motion.section>
 
-      {/* Footer */}
       <motion.footer
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -642,7 +644,9 @@ export default function Home() {
       >
         <div className="max-w-6xl mx-auto text-center text-muted-foreground">
           <p className="font-medium">© 2026 Michael Eko. All rights reserved.</p>
-          <p className="text-sm mt-3">Immigration Systems & AI Growth Operator</p>
+          <p className="text-sm mt-3">
+            AI Growth Operator | Immigration Systems Specialist | Co-founder @ Japa Genie
+          </p>
         </div>
       </motion.footer>
     </div>
