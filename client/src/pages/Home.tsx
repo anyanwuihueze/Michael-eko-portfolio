@@ -403,6 +403,12 @@ export default function Home() {
                 description:
                   "Rare combination of technical AI execution, growth strategy, and operational thinking.",
               },
+              {
+                icon: <Layers className="w-8 h-8" />,
+                title: "Execution & Delivery (Scrum Master Experience)",
+                description:
+                  "Led structured project delivery using Agile and Waterfall methodologies, managing real-world systems and ensuring consistent execution across complex workflows.",
+              },
             ].map((item, idx) => (
               <motion.div
                 key={idx}
@@ -440,14 +446,17 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="space-y-8 text-muted-foreground leading-relaxed text-lg"
           >
-            <p>
-              I work at the intersection of immigration, AI, and growth.
-            </p>
+            <p>I work at the intersection of immigration, AI, and growth.</p>
             <p>
               My experience supporting individuals in structured environments has
               given me a practical understanding of how immigration systems affect
               real lives. I combine that with technical expertise in AI to build
               scalable tools that simplify complex processes.
+            </p>
+            <p>
+              My background in Agile project delivery through Scrum Master work
+              strengthens my ability to not only design systems, but execute and
+              scale them reliably in real-world environments.
             </p>
             <p>
               As Co-founder of Japa Genie, I’m focused on helping African
@@ -465,8 +474,9 @@ export default function Home() {
             <h3 className="text-3xl font-bold mb-10">Credentials & Expertise</h3>
             <div className="grid md:grid-cols-2 gap-6">
               {[
-                "Education & process guidance based on public immigration policies",
-                "Canadian immigration experience",
+                "Certificate in Canadian Immigration Laws, Policies & Procedures (UBC)",
+                "Scrum Master (Agile & Waterfall Project Delivery)",
+                "Canadian immigration systems experience",
                 "AI systems & automation",
                 "Co-founder @ Japa Genie",
                 "Growth & marketing systems",
